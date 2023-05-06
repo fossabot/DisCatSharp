@@ -246,6 +246,7 @@ public sealed class DiscordConfiguration
 	/// <para>Defaults to an empty service provider.</para>
 	/// </summary>
 	public IServiceProvider ServiceProvider { internal get; set; } = new ServiceCollection().BuildServiceProvider(true);
+	public bool EnableSentry { get; internal set; } = false;
 
 	/// <summary>
 	/// Creates a new configuration with default values.
@@ -296,5 +297,6 @@ public sealed class DiscordConfiguration
 		this.Override = other.Override;
 		this.Locale = other.Locale;
 		this.ReportMissingFields = other.ReportMissingFields;
+		this.EnableSentry = other.EnableSentry;
 	}
 }
